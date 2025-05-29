@@ -193,37 +193,6 @@ nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
 
 "===========================================================================}}}
 
-"================== Neocomplete commands ==================================={{{
-
-" Enable neocomplete at startup
-let g:neocomplete#enable_at_startup = 1
-
-" Use smartcase
-let g:neocomplete#enable_smart_case = 1
-
-"Set minium syntax keyword length
-let g:neocomplete#sources#syntax#min_keyword_length = 2
-
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-
-" Python completeion with jedi-vim
-autocmd FileType python setlocal omnifunc=python3complete#Complete
-
-" if g:is_win
-"   autocmd FileType python setlocal omnifunc=python3complete#Complete
-" else
-"   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-" endif
-
-
-"===========================================================================}}}
-
 "================== Vimtex commands ========================================{{{
 
 let g:tex_flavor = "latex"
