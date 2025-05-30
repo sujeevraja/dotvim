@@ -1,20 +1,7 @@
-" Run pathogen
-if isdirectory($HOME . "/vimfiles")
-    source ~/vimfiles/bundle/vim-pathogen/autoload/pathogen.vim
-else
-    source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
-endif
+" Neovim configuration
+" Using native package manager instead of pathogen
 
-" disable unwanted plugins by adding their names as strings to this list
-" example:
-" let g:pathogen_disabled = []
-" let g:pathogen_disabled += ['darcula', 'delimitMate']
-let g:pathogen_disabled = []
-let g:pathogen_disabled += ['delimitMate']
-
-execute pathogen#infect()
-
-" To use plugins from bundle
+" To use plugins from pack directory
 filetype plugin on
 
 " Variable for windows specific settings
@@ -208,3 +195,17 @@ let g:vimtex_latexmk_continuous = 1
 " augroup END
 highlight ColorColumn ctermbg=darkred guibg=darkred
 call matchadd('ColorColumn', '\%101v', 100)
+
+" Neovim specific settings
+if has('nvim')
+    " Use system clipboard by default
+    set clipboard+=unnamedplus
+    
+    " Enable true colors if available
+    if has('termguicolors')
+        set termguicolors
+    endif
+    
+    " Use Python 3 for Neovim
+    let g:python3_host_prog = '/usr/bin/python3'
+endif 
